@@ -1,2 +1,60 @@
-<p>pomodoro works!</p>
-test
+<div class="container d-flex flex-column">
+    <h1>Pomodoro Timer</h1>
+    <mat-card class="container">
+        <mat-card-content class="d-flex justify-content-center m-3">
+            <div class="row g-3">
+                <div class="col-auto">
+                    <button mat-fab extended (click)="actionButtonClick(status.nextAction)">
+                        <mat-icon>{{status.buttonIcon}}</mat-icon>
+                        {{status.buttonActionNow}}
+                    </button>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-content class="d-flex justify-content-center m-3">
+            <h1>{{displayTime()}}</h1>
+        </mat-card-content>
+        <mat-card-content class="d-flex justify-content-center m-3">
+            <div class="row g-3">
+                <div class="col-auto">
+                    <button mat-raised-button [disabled]="!this.timerState.focus">
+                        Focus!
+                    </button>
+                </div>
+
+                <div class="col-auto">
+                    <button mat-raised-button [disabled]="!this.timerState.short">
+                        Short Break!
+                    </button>
+                </div>
+
+                <div class="col-auto">
+                    <button mat-raised-button [disabled]="!this.timerState.long">
+                        Long Break Time!
+                    </button>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    <div class="m-2">
+        <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+                <mat-expansion-panel-header>
+                <mat-panel-title> Debug Console </mat-panel-title>
+                </mat-expansion-panel-header>
+                    <b>status =</b>
+                        <br>currentStatus: {{status.currentStatus}}
+                        <br>nextAction: {{status.nextAction}}
+                        <br>buttonIcon: {{status.buttonIcon}}
+                        <br>buttonActionNow: {{status.buttonActionNow}}
+                        <br>buttonColor: {{status.buttonColor}}
+                    <br>
+                    <br><b>timerState =</b> 
+                        <br>focus: {{timerState.focus}}
+                        <br>short: {{timerState.short}}
+                        <br>long: {{timerState.long}}
+                        <br>lastbreak: {{timerState.lastBreak}}
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+</div>

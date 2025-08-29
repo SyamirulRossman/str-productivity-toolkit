@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 export const MATERIAL_IMPORTS = [
   MatToolbarModule,
@@ -14,6 +15,7 @@ export const MATERIAL_IMPORTS = [
   MatListModule,
   MatCardModule,
   MatGridListModule,
+  MatExpansionModule,
   
   MatIcon,
 ];
