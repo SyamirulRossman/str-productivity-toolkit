@@ -1,0 +1,32 @@
+<div class="home-container">
+    <h1>Welcome to Home!</h1>
+    <p>This is the homepage content.</p>
+    <mat-card class="container" appearance="outlined">
+        <mat-card-content class="d-flex justify-content-center">
+            <div class="row g-3"> <!-- g-3 = gap antara col -->
+                <div class="col-auto">
+                    <a href="pomodoro">
+                        <button mat-fab extended>
+                            <mat-icon>timer</mat-icon>
+                            Pomodoro Timer
+                        </button>
+                    </a>
+                </div>
+
+                <div class="col-auto">
+                <button mat-fab extended disabled>
+                    <mat-icon>error_outline</mat-icon>
+                    Feature 2
+                </button>
+                </div>
+
+                <div class="col-auto">
+                <button mat-fab extended disabled>
+                    <mat-icon>error_outline</mat-icon>
+                    Feature 3
+                </button>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

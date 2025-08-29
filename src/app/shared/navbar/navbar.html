@@ -1,0 +1,49 @@
+<mat-sidenav-container class="app-container">
+  <!-- Drawer -->
+  <mat-sidenav #drawer mode="over" style="width: fit-content;">
+    <mat-nav-list>
+      <a mat-list-item href="">Home</a>
+      <a mat-list-item href="pomodoro">Pomodoro Timer</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Main content -->
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <!-- Left section -->
+      <div class="left-section">
+        <button mat-icon-button (click)="drawer.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span class="app-title">My App</span>
+      </div>
+
+      <span class="spacer"></span> <!-- pushes right section -->
+
+      <!-- Right section -->
+      <div class="right-section">
+        <a href="">
+          <button mat-icon-button> 
+            <mat-icon>home</mat-icon>
+          </button>
+        </a>
+        <a href="pomodoro">
+          <button mat-icon-button> 
+            <mat-icon>timer</mat-icon>
+          </button>
+        </a>
+        <button mat-icon-button>
+            <mat-icon>error_outline</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>error_outline</mat-icon>
+        </button>
+      </div>
+    </mat-toolbar>
+
+    <!-- Page content -->
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
