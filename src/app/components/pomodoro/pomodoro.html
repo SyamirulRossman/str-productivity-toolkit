@@ -1,10 +1,10 @@
 <div class="container d-flex flex-column">
     <h1>Pomodoro Timer</h1>
-    <mat-card class="container">
+    <mat-card class="container" [class]="switchCardClass()">
         <mat-card-content class="d-flex justify-content-center m-3">
             <div class="row g-3">
                 <div class="col-auto">
-                    <button mat-fab extended (click)="actionButtonClick(status.nextAction)">
+                    <button matFab extended (click)="actionButtonClick(status.nextAction)">
                         <mat-icon>{{status.buttonIcon}}</mat-icon>
                         {{status.buttonActionNow}}
                     </button>
@@ -12,24 +12,24 @@
             </div>
         </mat-card-content>
         <mat-card-content class="d-flex justify-content-center m-3">
-            <h1>{{displayTime()}}</h1>
+            <div class="timer-style">{{displayTime()}}</div>
         </mat-card-content>
         <mat-card-content class="d-flex justify-content-center m-3">
             <div class="row g-3">
                 <div class="col-auto">
-                    <button mat-raised-button [disabled]="!this.timerState.focus">
+                    <button [disabled]="!this.timerState.focus" matButton="filled" class="green-button">
                         Focus!
                     </button>
                 </div>
 
                 <div class="col-auto">
-                    <button mat-raised-button [disabled]="!this.timerState.short">
+                    <button [disabled]="!this.timerState.short" matButton="filled">
                         {{timerState.shortBreakCount ? (timerState.shortBreakCount | ordinal) : null}} Short Break!
                     </button>
                 </div>
 
                 <div class="col-auto">
-                    <button mat-raised-button [disabled]="!this.timerState.long">
+                    <button [disabled]="!this.timerState.long" matButton="filled" class="purple-button">
                         Long Break Time!
                     </button>
                 </div>

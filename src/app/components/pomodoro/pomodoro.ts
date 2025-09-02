@@ -112,9 +112,18 @@ export class Pomodoro{
     
   };
 
-  ngOnDestroy() {
-    this.pause();
+  switchCardClass(){
+    if (this.timerState.short){
+      return "blue-card"
+    } else if (this.timerState.long){
+      return "purple-card"
+    } else {
+      return "green-card"
+    }
   }
 
-  
+  ngOnDestroy() {
+    this.pause();
+  };
+
 }

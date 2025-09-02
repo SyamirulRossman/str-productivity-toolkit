@@ -35,4 +35,40 @@ body {
   margin: 0;
 }
 
+:root {
+  // green style
+  .green-button {
+    @include mat.button-overrides((
+      filled-container-color: #4caf50,
+      filled-label-text-color: #ffffff,
+    ));
+  }
 
+  // purple style
+  .purple-button {
+    @include mat.button-overrides((
+      filled-container-color: #7700ff,
+      filled-label-text-color: #ffffff,
+    ));
+  }
+}
+
+:root{
+  .green-card {
+    @include mat.card-overrides((
+      elevated-container-color: #b1fdb4,
+    ));
+  }
+
+  .blue-card {
+    @include mat.card-overrides((
+      elevated-container-color: #8ccdff,
+    ));
+  }
+
+  .purple-card {
+    @include mat.card-overrides((
+      elevated-container-color: #cdb1fd,
+    ));
+  }
+}
