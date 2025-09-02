@@ -9,12 +9,18 @@ import { CUSTOM_PIPES_IMPORTS } from '../../shared/cutomPipe.imports';
   styleUrl: './pomodoro.scss'
 })
 export class Pomodoro{
+  constructor() {
+    this.audio = new Audio('assets/sounds/pomodoro_rings.mp3');
+  }
+  
   readonly panelOpenState = signal(false);
 
   private duration = 0.1 * 60; // 25 min in seconds
   timeLeft = signal(this.duration);
   private intervalId: any;
   shortBreakLimiter = 1;
+
+  audio: HTMLAudioElement;
 
   status = {
     currentStatus: "pause",
@@ -84,6 +90,7 @@ export class Pomodoro{
   }
 
   next() {
+    this.playSound();
     this.pause();
     this.setButtonPlay();
 
@@ -119,7 +126,12 @@ export class Pomodoro{
       return "purple-card"
     } else {
       return "green-card"
-    }
+    };
+  };
+
+  playSound() {
+    this.audio.currentTime = 1;
+    this.audio.play().catch(err => console.error('Play error:', err));
   }
 
   ngOnDestroy() {
