@@ -1,9 +1,10 @@
 import { ChangeDetectorRef, Component, computed, effect, signal} from '@angular/core';
 import { MATERIAL_IMPORTS } from '../../shared/material.imports';
+import { CUSTOM_PIPES_IMPORTS } from '../../shared/cutomPipe.imports';
 
 @Component({
   selector: 'app-pomodoro',
-  imports: [MATERIAL_IMPORTS],
+  imports: [MATERIAL_IMPORTS, CUSTOM_PIPES_IMPORTS],
   templateUrl: './pomodoro.html',
   styleUrl: './pomodoro.scss'
 })
@@ -13,6 +14,7 @@ export class Pomodoro{
   private duration = 0.1 * 60; // 25 min in seconds
   timeLeft = signal(this.duration);
   private intervalId: any;
+  shortBreakLimiter = 1;
 
   status = {
     currentStatus: "pause",
@@ -26,6 +28,7 @@ export class Pomodoro{
     focus: true,
     short: false,
     long: false,
+    shortBreakCount: 0,
     lastBreak: "LONG"
   }
 
@@ -85,24 +88,26 @@ export class Pomodoro{
     this.setButtonPlay();
 
     if (this.timerState.focus == true){
-      if (this.timerState.lastBreak == "SHORT"){
+      if (this.timerState.shortBreakCount == this.shortBreakLimiter){
       this.timerState.focus = false;
       this.timerState.short = false;
       this.timerState.long = true;
       this.timerState.lastBreak = "LONG";
+      this.timerState.shortBreakCount = 0;
       this.timeLeft.set((0.1*40));
-    } else if ( this.timerState.lastBreak == "LONG" ){
+    } else if ( this.timerState.shortBreakCount < this.shortBreakLimiter ){
       this.timerState.focus = false;
       this.timerState.short = true;
       this.timerState.long = false;
       this.timerState.lastBreak = "SHORT";
+      this.timerState.shortBreakCount++
       this.timeLeft.set((0.1*30));
     }
     }else {
       this.timerState.focus = true;
       this.timerState.short = false;
       this.timerState.long = false;
-      this.timeLeft.set((0.1*50));
+      this.timeLeft.set((0.1*60));
     };
     
   };

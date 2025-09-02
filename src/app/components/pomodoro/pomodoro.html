@@ -24,7 +24,7 @@
 
                 <div class="col-auto">
                     <button mat-raised-button [disabled]="!this.timerState.short">
-                        Short Break!
+                        {{timerState.shortBreakCount ? (timerState.shortBreakCount | ordinal) : null}} Short Break!
                     </button>
                 </div>
 
@@ -54,6 +54,7 @@
                         <br>short: {{timerState.short}}
                         <br>long: {{timerState.long}}
                         <br>lastbreak: {{timerState.lastBreak}}
+                        <br>shortBreakCount: {{timerState.shortBreakCount}}
             </mat-expansion-panel>
         </mat-accordion>
     </div>
