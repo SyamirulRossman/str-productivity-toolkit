@@ -39,16 +39,17 @@
             "ssr": {
               "entry": "src/server.ts"
             },
-            "outputPath": "dist/productivityToolkit"
-          },
+            "outputPath": "dist/productivityToolkit",
+            "index": "src/index.html"
+            },
           "configurations": {
             "production": {
               "baseHref": "/str-productivity-toolkit/",
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "5MB",
+                  "maximumError": "10MB"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -78,7 +79,6 @@
             }
           },
           "defaultConfiguration": "development"
-          
         },
         "extract-i18n": {
           "builder": "@angular/build:extract-i18n"

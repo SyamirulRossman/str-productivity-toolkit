@@ -8,6 +8,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { MatTabsModule } from '@angular/material/tabs';
+import { RouterModule } from '@angular/router';
 
 
 export const MATERIAL_IMPORTS = [
@@ -22,4 +23,6 @@ export const MATERIAL_IMPORTS = [
   MatTabsModule,
   
   MatIcon,
+
+  RouterModule,
 ];
