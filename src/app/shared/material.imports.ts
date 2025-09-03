@@ -7,6 +7,8 @@ import { MatListModule } from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { MatTabsModule } from '@angular/material/tabs';
+
 
 export const MATERIAL_IMPORTS = [
   MatToolbarModule,
@@ -16,6 +18,8 @@ export const MATERIAL_IMPORTS = [
   MatCardModule,
   MatGridListModule,
   MatExpansionModule,
+
+  MatTabsModule,
   
   MatIcon,
 ];

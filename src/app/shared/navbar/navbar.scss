@@ -28,3 +28,19 @@ mat-toolbar {
   align-items: center;
   gap: 0.5rem;
 }
+
+.menu-btn {
+  display: flex;
+  flex-direction: column;      // icon atas, text bawah
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px 16px;          // adjust ikut taste
+  min-width: 120px;             // fixed width supaya tak bujur panjang
+  border-radius: 8px;           // cantik bulat sikit
+}
+
+.menu-btn mat-icon {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
