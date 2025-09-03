@@ -39,11 +39,11 @@
             "ssr": {
               "entry": "src/server.ts"
             },
-            "baseHref": "https://syamirulrossman.github.io/str-productivity-toolkit/",
             "outputPath": "dist/productivityToolkit"
           },
           "configurations": {
             "production": {
+              "baseHref": "/str-productivity-toolkit/",
               "budgets": [
                 {
                   "type": "initial",
@@ -59,6 +59,7 @@
               "outputHashing": "all"
             },
             "development": {
+              "baseHref": "/",
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
@@ -77,6 +78,7 @@
             }
           },
           "defaultConfiguration": "development"
+          
         },
         "extract-i18n": {
           "builder": "@angular/build:extract-i18n"

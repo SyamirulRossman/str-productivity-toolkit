@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:productivityToolkit": "node dist/productivityToolkit/server/server.mjs",
-    "deploy": "ng deploy --base-href=https://syamirulrossman.github.io/str-productivity-toolkit/"
+    "deploy": "ng deploy --base-href=/str-productivity-toolkit/"
   },
   "prettier": {
     "printWidth": 100,
