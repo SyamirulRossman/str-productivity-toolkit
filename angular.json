@@ -38,7 +38,9 @@
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
-            }
+            },
+            "baseHref": "https://syamirulrossman.github.io/str-productivity-toolkit/",
+            "outputPath": "dist/productivityToolkit"
           },
           "configurations": {
             "production": {
@@ -99,6 +101,9 @@
               "src/styles.scss"
             ]
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
