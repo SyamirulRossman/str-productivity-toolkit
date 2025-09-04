@@ -13,7 +13,7 @@ html {
       primary: mat.$azure-palette,
       tertiary: mat.$blue-palette,
     ),
-    typography: Roboto,
+    typography: Montserrat,
     density: 0,
   ));
 }
@@ -33,6 +33,15 @@ body {
 
   // Reset the user agent margin.
   margin: 0;
+}
+
+:root{
+  @include mat.toolbar-overrides((
+    container-background-color: #8ccdff,
+    container-text-color: black,
+    title-text-font: Montserrat,
+    title-text-weight: bold,
+  ));
 }
 
 :root {

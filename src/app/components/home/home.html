@@ -1,30 +1,35 @@
-<div class="container d-flex flex-column">
-    <h1>Welcome Productivity Tools!</h1>
+<div class="container d-flex flex-column mt-3 justify-content-center">
+    <h1>Welcome to Productivity Tools!</h1>
     <p>Choose any to continue.</p>
+
     <mat-card class="container" appearance="outlined">
-        <mat-card-content class="d-flex justify-content-center">
-            <div class="row g-3">
-                <div class="col-auto">
+        <mat-card-content class="">
+            <mat-grid-list cols="2" rowHeight="3:1">
+                <mat-grid-tile>
                     <button matFab extended routerLink="/pomodoro">
                         <mat-icon>timer</mat-icon>
                         <span>Pomodoro Timer</span>
                     </button>
-                </div>
-
-                <div class="col-auto">
-                <button matFab  extended disabled>
-                    <mat-icon>error_outline</mat-icon>
-                    Feature 2
-                </button>
-                </div>
-
-                <div class="col-auto">
-                <button matFab  extended disabled>
-                    <mat-icon>error_outline</mat-icon>
-                    Feature 3
-                </button>
-                </div>
-            </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                     <button matFab  extended disabled>
+                        <mat-icon>error_outline</mat-icon>
+                        Feature 2
+                    </button>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                     <button matFab  extended disabled>
+                        <mat-icon>error_outline</mat-icon>
+                        Feature 3
+                    </button>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                     <button matFab  extended disabled>
+                        <mat-icon>error_outline</mat-icon>
+                        Feature 4
+                    </button>
+                </mat-grid-tile>
+            </mat-grid-list>
         </mat-card-content>
     </mat-card>
 </div>

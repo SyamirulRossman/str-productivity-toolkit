@@ -2,16 +2,6 @@
     <h1>Pomodoro Timer</h1>
     <mat-card class="container" [class]="switchCardClass()">
         <mat-card-content class="d-flex justify-content-center m-3">
-            <div class="row g-3">
-                <div class="col-auto">
-                    <button matFab extended (click)="actionButtonClick(status.nextAction)">
-                        <mat-icon>{{status.buttonIcon}}</mat-icon>
-                        {{status.buttonActionNow}}
-                    </button>
-                </div>
-            </div>
-        </mat-card-content>
-        <mat-card-content class="d-flex justify-content-center m-3">
             <div class="timer-style">{{displayTime()}}</div>
         </mat-card-content>
         <mat-card-content class="d-flex justify-content-center m-3">
@@ -36,7 +26,19 @@
             </div>
         </mat-card-content>
     </mat-card>
-    <div class="m-2">
+    <div class="my-1">
+        <mat-card-content class="d-flex justify-content-center">
+            <div class="row">
+                <div class="col-auto">
+                    <button matFab extended (click)="actionButtonClick(status.nextAction)">
+                        <mat-icon>{{status.buttonIcon}}</mat-icon>
+                        {{status.buttonActionNow}}
+                    </button>
+                </div>
+            </div>
+        </mat-card-content>
+    </div>
+    <div class="my-3">
         <mat-accordion>
             <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
                 <mat-expansion-panel-header>

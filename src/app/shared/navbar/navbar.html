@@ -1,10 +1,7 @@
-<mat-sidenav-container class="app-container">
+<!-- <mat-sidenav-container class="app-container">
   
   <mat-sidenav #drawer mode="side" opened="true" style="width: fit-content;">
     <mat-nav-list>
-      <!-- <div mat-list-item class="d-flex justify-content-center text-center mt-2 mb-2">
-        STR Productivity Tools
-      </div> -->
       <div class="d-flex justify-content-center text-center p-1 m-1">
         <button matButton="elevated" routerLink="/" class="menu-btn">
           <img src="assets/images/logo.png" width="24" height="24" alt="menu" />
@@ -22,38 +19,68 @@
   </mat-sidenav>
 
   
-  <mat-sidenav-content>
+  <mat-sidenav-content> -->
     <mat-toolbar color="primary">
       <div class="left-section">
+        KasiSetel
       </div>
 
       <span class="spacer"></span>
 
       
       <div class="right-section">
-        <a href="">
-          <button mat-icon-button> 
-            
-            <img src="assets/images/logo.png" width="24" height="24" alt="menu" />
-          </button>
-        </a>
-        <a href="pomodoro">
-          <button mat-icon-button> 
-            <mat-icon>timer</mat-icon>
-          </button>
-        </a>
-        <button mat-icon-button>
+        <button matMiniFab  routerLink=""> 
+          <img src="assets/images/logo.png" width="24" height="24" alt="menu" />
+        </button>
+        <button matMiniFab  routerLink="/pomodoro"> 
+          <mat-icon>timer</mat-icon>
+        </button>
+        <button matMiniFab  disabled="true">
             <mat-icon>error_outline</mat-icon>
         </button>
-        <button mat-icon-button>
+        <button matMiniFab  disabled="true">
             <mat-icon>error_outline</mat-icon>
         </button>
       </div>
     </mat-toolbar>
 
     
-    <div class="content">
+    <div class="content py-3">
       <router-outlet></router-outlet>
     </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+
+    <mat-toolbar
+      color="primary"
+      class="bottom-toolbar"
+    >
+      <div matTooltip="My nickname? Classified. Buy me coffee first.">
+        <p class="m-0" style="font-size: 16px">
+          Syamirul "Top" Rossman
+        </p>
+      </div>
+      <div class="d-flex gap-2 content-toolbar-right">
+        <button matMiniFab 
+          (click)="openRouteInNewTab('https://www.linkedin.com/in/syamirulrossman/')"
+          matTooltip="Serious about my work, unserious about everything else."
+        > 
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/960px-LinkedIn_logo_initials.png"
+           width="24" height="24" alt="menu" />
+        </button>
+        <button matMiniFab 
+          (click)="openRouteInNewTab('https://github.com/SyamirulRossman')"
+          matTooltip="Under construction since forever."
+        > 
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"
+           width="24" height="24" alt="menu" />
+        </button>
+        <button matMiniFab 
+          (click)="openRouteInNewTab('https://www.youtube.com/@syamirulrossman')"
+          matTooltip="Yeah, I make videos sometimes."
+        > 
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/YouTube_social_red_squircle_%282024%29.svg"
+           width="24" height="24" alt="menu" />
+        </button>
+      </div>
+    </mat-toolbar>
+  <!-- </mat-sidenav-content>
+</mat-sidenav-container> -->
