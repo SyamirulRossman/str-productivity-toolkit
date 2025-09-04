@@ -1,35 +1,36 @@
 <div class="container d-flex flex-column mt-3 justify-content-center">
-    <h1>Welcome to Productivity Tools!</h1>
+    <h1><b>Kasi Setel!</b></h1>
+    <h4><b>Today is:</b> {{date | date:'EEEE, dd MMMM yyyy'}}</h4>
+    <h4>
+        <b>Time is:</b> {{ time$ | async | date:'hh:mm:ss a':'Asia/Kuala_Lumpur' }}
+        <small><small><small>(Malaysia Time GMT+8)</small></small></small>
+    </h4>
     <p>Choose any to continue.</p>
 
-    <mat-card class="container" appearance="outlined">
-        <mat-card-content class="">
-            <mat-grid-list cols="2" rowHeight="3:1">
-                <mat-grid-tile>
-                    <button matFab extended routerLink="/pomodoro">
-                        <mat-icon>timer</mat-icon>
-                        <span>Pomodoro Timer</span>
-                    </button>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                     <button matFab  extended disabled>
-                        <mat-icon>error_outline</mat-icon>
-                        Feature 2
-                    </button>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                     <button matFab  extended disabled>
-                        <mat-icon>error_outline</mat-icon>
-                        Feature 3
-                    </button>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                     <button matFab  extended disabled>
-                        <mat-icon>error_outline</mat-icon>
-                        Feature 4
-                    </button>
-                </mat-grid-tile>
-            </mat-grid-list>
-        </mat-card-content>
-    </mat-card>
+    <mat-grid-list cols="2" rowHeight="3:1">
+        <mat-grid-tile class="blue-background">
+            <button matFab extended routerLink="/pomodoro">
+                <mat-icon>timer</mat-icon>
+                <span>Pomodoro Timer</span>
+            </button>
+        </mat-grid-tile>
+        <mat-grid-tile class="green-background">
+                <button matFab extended class="green-fab" disabled>
+                <mat-icon>access_time</mat-icon>
+                World Clock
+            </button>
+        </mat-grid-tile>
+        <mat-grid-tile class="purple-background">
+                <button matFab extended class="purple-fab" disabled>
+                <mat-icon>assignment_turned_in</mat-icon>
+                Task Tracker (wih motivation)
+            </button>
+        </mat-grid-tile>
+        <mat-grid-tile class="orange-background">
+                <button matFab extended class="orange-fab" disabled>
+                <mat-icon>class</mat-icon>
+                Sratchpad
+            </button>
+        </mat-grid-tile>
+    </mat-grid-list>
 </div>

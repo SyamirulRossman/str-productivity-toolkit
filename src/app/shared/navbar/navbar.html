@@ -21,7 +21,7 @@
   
   <mat-sidenav-content> -->
     <mat-toolbar color="primary">
-      <div class="left-section">
+      <div class="left-section" routerLink="">
         KasiSetel
       </div>
 
@@ -29,17 +29,36 @@
 
       
       <div class="right-section">
-        <button matMiniFab  routerLink=""> 
-          <img src="assets/images/logo.png" width="24" height="24" alt="menu" />
-        </button>
-        <button matMiniFab  routerLink="/pomodoro"> 
+        <button 
+          matMiniFab  
+          routerLink="/pomodoro"
+          matTooltip="Pomodoro Timer"
+        > 
           <mat-icon>timer</mat-icon>
         </button>
-        <button matMiniFab  disabled="true">
-            <mat-icon>error_outline</mat-icon>
+        <button 
+          matMiniFab
+          class="green-fab"
+          matTooltip="World Clock"
+          disabled
+        >
+            <mat-icon>access_time</mat-icon>
         </button>
-        <button matMiniFab  disabled="true">
-            <mat-icon>error_outline</mat-icon>
+        <button 
+          matMiniFab
+          class="purple-fab"
+          matTooltip="Task Tracker (wih motivation)"
+          disabled
+        >
+            <mat-icon>assignment_turned_in</mat-icon>
+        </button>
+        <button 
+          matMiniFab
+          class="orange-fab"
+          matTooltip="Sratchpad"
+          disabled
+        >
+            <mat-icon>class</mat-icon>
         </button>
       </div>
     </mat-toolbar>
@@ -52,13 +71,20 @@
     <mat-toolbar
       color="primary"
       class="bottom-toolbar"
-    >
+    > 
       <div matTooltip="My nickname? Classified. Buy me coffee first.">
         <p class="m-0" style="font-size: 16px">
-          Syamirul "Top" Rossman
+          Syamirul "Top" Rossman - {{date | date:'YYYY'}}
         </p>
       </div>
       <div class="d-flex gap-2 content-toolbar-right">
+        <button 
+          matMiniFab 
+          routerLink=""
+          matTooltip="Home"
+        > 
+          <img src="assets/images/logo.png" width="24" height="24" alt="menu" />
+        </button>
         <button matMiniFab 
           (click)="openRouteInNewTab('https://www.linkedin.com/in/syamirulrossman/')"
           matTooltip="Serious about my work, unserious about everything else."

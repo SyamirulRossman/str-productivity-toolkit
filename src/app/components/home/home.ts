@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { MATERIAL_IMPORTS } from '../../shared/material.imports';
+import { interval, map, startWith } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -8,5 +9,9 @@ import { MATERIAL_IMPORTS } from '../../shared/material.imports';
   styleUrl: './home.scss'
 })
 export class Home {
-
+  date = new Date()
+  time$ = interval(1000).pipe(
+    startWith(0),
+    map(() => new Date())
+  );
 }

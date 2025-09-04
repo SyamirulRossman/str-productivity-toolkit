@@ -13,6 +13,8 @@ export class Navbar {
     private router: Router
   ) {}
 
+  date = Date.now();
+
   openRouteInNewTab(url: string) {
     window.open(url, '_blank', 'noopener,noreferrer');
   }
