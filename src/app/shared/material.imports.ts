@@ -10,10 +10,16 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { MatTabsModule } from '@angular/material/tabs';
 import { RouterModule } from '@angular/router';
 import {MatTooltipModule} from '@angular/material/tooltip';
-import { AsyncPipe, DatePipe } from '@angular/common';
+import { AsyncPipe, DatePipe, DecimalPipe } from '@angular/common';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common'; 
 
 
 export const MATERIAL_IMPORTS = [
+  CommonModule,
+
   MatToolbarModule,
   MatSidenavModule,
   MatButtonModule,
@@ -23,11 +29,15 @@ export const MATERIAL_IMPORTS = [
   MatExpansionModule,
   MatTooltipModule,
   MatTabsModule,
+  MatFormFieldModule,
+  MatInputModule,
   
   MatIcon,
 
   RouterModule,
+  ReactiveFormsModule,
 
   DatePipe,
   AsyncPipe,
+  DecimalPipe,
 ];

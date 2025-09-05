@@ -5,7 +5,7 @@
             <div class="timer-style">{{displayTime()}}</div>
         </mat-card-content>
         <mat-card-content class="d-flex justify-content-center m-3">
-            <div class="row g-3">
+            <!-- <div class="row g-3 justify-content-center">
                 <div class="col-auto">
                     <button [disabled]="!this.timerState.focus" matButton="filled" class="green-button">
                         Focus!
@@ -19,6 +19,23 @@
                 </div>
 
                 <div class="col-auto">
+                    <button [disabled]="!this.timerState.long" matButton="filled" class="purple-button">
+                        Long Break Time!
+                    </button>
+                </div>
+            </div> -->
+            <div class="my-grid">
+                <div class="box">
+                    <button [disabled]="!this.timerState.focus" matButton="filled" class="green-button">
+                        Focus please!
+                    </button>
+                </div>
+                <div class="box">
+                    <button [disabled]="!this.timerState.short" matButton="filled">
+                        {{timerState.shortBreakCount ? (timerState.shortBreakCount | ordinal) : null}} Short Break!
+                    </button>
+                </div>
+                <div class="box">
                     <button [disabled]="!this.timerState.long" matButton="filled" class="purple-button">
                         Long Break Time!
                     </button>
@@ -38,25 +55,73 @@
             </div>
         </mat-card-content>
     </div>
-    <div class="my-3">
+    <div class="pb-3">
+        <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+                <mat-expansion-panel-header>
+                <mat-panel-title> Customize your Pomodoro Timer </mat-panel-title>
+                </mat-expansion-panel-header>
+                    <form [formGroup]="timerForm" (ngSubmit)="onSubmit()" class="timer-form">
+
+                        <div class="form-row">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Focus Duration (Minutes)</mat-label>
+                                <input matInput type="number" formControlName="duration" min="0">
+                            </mat-form-field>
+
+                            <mat-form-field appearance="outline">
+                                <mat-label>Short Break Duration (Minutes)</mat-label>
+                                <input matInput type="number" formControlName="shortBreakDuration" min="0">
+                            </mat-form-field>
+
+                            <mat-form-field appearance="outline">
+                                <mat-label>Long Break Duration (Minutes)</mat-label>
+                                <input matInput type="number" formControlName="longBreakDuration" min="0">
+                            </mat-form-field>
+
+                            <mat-form-field appearance="outline">
+                                <mat-label>Short Break Max</mat-label>
+                                <input matInput type="number" formControlName="interval">
+                                <mat-error *ngIf="timerForm.get('interval')?.hasError('min')">
+                                    Interval must be at least 1
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="form-actions">
+                            <button matButton="tonal" color="primary" type="submit" [disabled]="timerForm.invalid">
+                            Set
+                            </button>
+                        </div>
+                    </form>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>    
+    <div class="pb-3">
         <mat-accordion>
             <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
                 <mat-expansion-panel-header>
                 <mat-panel-title> Debug Console </mat-panel-title>
                 </mat-expansion-panel-header>
-                    <b>status =</b>
-                        <br>currentStatus: {{status.currentStatus}}
-                        <br>nextAction: {{status.nextAction}}
-                        <br>buttonIcon: {{status.buttonIcon}}
-                        <br>buttonActionNow: {{status.buttonActionNow}}
-                        <br>buttonColor: {{status.buttonColor}}
+                    <b>Timer Status =</b>
+                        <br>Current Status: {{status.currentStatus}}
+                        <br>Next Action: {{status.nextAction}}
+                        <br>Button Icon: {{status.buttonIcon}}
+                        <br>Button Action Now: {{status.buttonActionNow}}
+                        <br>Button Color: {{status.buttonColor}}
                     <br>
-                    <br><b>timerState =</b> 
-                        <br>focus: {{timerState.focus}}
-                        <br>short: {{timerState.short}}
-                        <br>long: {{timerState.long}}
-                        <br>lastbreak: {{timerState.lastBreak}}
-                        <br>shortBreakCount: {{timerState.shortBreakCount}}
+                    <br><b>Timer State =</b> 
+                        <br>Focus: {{timerState.focus}}
+                        <br>Short: {{timerState.short}}
+                        <br>Long: {{timerState.long}}
+                        <br>Last Break: {{timerState.lastBreak}}
+                        <br>Short Break Count: {{timerState.shortBreakCount}}
+                    <br>
+                    <br><b>Timer Value =</b> 
+                        <br>Focus: {{ (duration / 60) | number : '1.0-2'}} minutes
+                        <br>Short: {{ (shortBreakDuration / 60) | number : '1.0-2'}} minutes
+                        <br>Long: {{ (longBreakDuration / 60) | number : '1.0-2'}} minutes
+                        <br>Short Break Max: {{shortBreakLimiter | number : '1.0-0'}}
             </mat-expansion-panel>
         </mat-accordion>
     </div>

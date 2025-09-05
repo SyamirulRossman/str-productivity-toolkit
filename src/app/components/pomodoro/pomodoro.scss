@@ -3,3 +3,52 @@
     padding: 0.5em;
     font-weight: bold;
 }
+
+.my-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* default = mobile, 1 column */
+}
+
+/* Tablet / medium screen: 2 columns */
+@media (min-width: 768px) {
+  .my-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Desktop / big screen: 3 columns */
+@media (min-width: 1200px) {
+  .my-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 3%;
+  margin: 1%;
+}
+
+.timer-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* center horizontally */
+  justify-content: center; /* optional → center vertically */
+  gap: 1.5rem;  
+}
+
+.form-row {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
