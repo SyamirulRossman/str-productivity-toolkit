@@ -1,5 +1,16 @@
 <div class="container d-flex flex-column">
-    <h1>Pomodoro Timer</h1>
+    <div class="header-container">
+        <h1>Pomodoro Timer</h1>
+
+        <button mat-mini-fab
+            (click)="openRouteInNewTab('https://en.wikipedia.org/wiki/Pomodoro_Technique')"
+            class="grey-fab"
+            matTooltip="What is Pomodoro Timer"
+        >
+            <mat-icon>info</mat-icon>
+        </button>
+    </div>
+
     <mat-card class="container" [class]="switchCardClass()">
         <mat-card-content class="d-flex justify-content-center m-3">
             <div class="timer-style">{{displayTime()}}</div>

@@ -82,6 +82,13 @@ body {
       foreground-color: #ad5406,
     ));
   }
+
+  .grey-fab {
+    @include mat.fab-overrides((
+      container-color: #c8c8c8,
+      foreground-color: #4e4e4e,
+    ));
+  }
   
 }
 
@@ -170,4 +177,9 @@ body {
 .teal-fab.mat-mdc-mini-fab {
   background-color: #aaf2ff !important;
   color: #067bad !important;
+}
+
+.grey-fab.mat-mdc-mini-fab {
+  background-color: #c8c8c8 !important;
+  color: #4e4e4e !important;
 }

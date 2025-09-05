@@ -160,7 +160,11 @@ export class Pomodoro{
     } else {
       console.warn('Form is invalid', this.timerForm.errors);
     }
-  }
+  };
+
+  openRouteInNewTab(url: string) {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
 
   ngOnDestroy() {
     this.pause();
