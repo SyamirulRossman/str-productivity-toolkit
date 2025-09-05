@@ -80,7 +80,7 @@
                             </mat-form-field>
 
                             <mat-form-field appearance="outline">
-                                <mat-label>Short Break Max</mat-label>
+                                <mat-label>Max Pomodori</mat-label>
                                 <input matInput type="number" formControlName="interval">
                                 <mat-error *ngIf="timerForm.get('interval')?.hasError('min')">
                                     Interval must be at least 1
@@ -121,7 +121,7 @@
                         <br>Focus: {{ (duration / 60) | number : '1.0-2'}} minutes
                         <br>Short: {{ (shortBreakDuration / 60) | number : '1.0-2'}} minutes
                         <br>Long: {{ (longBreakDuration / 60) | number : '1.0-2'}} minutes
-                        <br>Short Break Max: {{shortBreakLimiter | number : '1.0-0'}}
+                        <br>Max Pomodori (Short Break Max): {{shortBreakLimiter | number : '1.0-0'}}
             </mat-expansion-panel>
         </mat-accordion>
     </div>

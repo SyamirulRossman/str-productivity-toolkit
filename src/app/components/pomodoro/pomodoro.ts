@@ -15,9 +15,9 @@ export class Pomodoro{
 
   readonly panelOpenState = signal(false);
 
-  duration = Number((3 * 60).toFixed(0));
-  shortBreakDuration = Number((1 * 60).toFixed(0));
-  longBreakDuration = Number((2 * 60).toFixed(0));
+  duration = Number((25 * 60).toFixed(0));
+  shortBreakDuration = Number((5 * 60).toFixed(0));
+  longBreakDuration = Number((10 * 60).toFixed(0));
   shortBreakLimiter = 1;
 
   timeLeft = signal(this.duration);
