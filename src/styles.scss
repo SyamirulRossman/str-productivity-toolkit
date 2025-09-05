@@ -82,6 +82,7 @@ body {
       foreground-color: #ad5406,
     ));
   }
+  
 }
 
 :root{
@@ -102,6 +103,24 @@ body {
       elevated-container-color: #cdb1fd,
     ));
   }
+
+  .orange-card {
+    @include mat.card-overrides((
+      elevated-container-color: #ffc28c,
+    ));
+  }
+
+  .red-card {
+    @include mat.card-overrides((
+      elevated-container-color: #ff8c8c,
+    ));
+  }
+
+  .teal-card {
+    @include mat.card-overrides((
+      elevated-container-color: #8cffe4,
+    ));
+  }
 }
 
 .blue-background {
@@ -120,6 +139,14 @@ body {
   background-color: #ffc28c,
 }
 
+.red-background {
+   background-color: #ff8c8c,
+}
+
+.teal-background {
+   background-color: #8cffe4,
+}
+
 .green-fab.mat-mdc-mini-fab {
   background-color: #cfffd0 !important;
   color: #047d08, !important;
@@ -133,4 +160,14 @@ body {
 .orange-fab.mat-mdc-mini-fab {
   background-color: #ffd2aa !important;
   color: #ad5406 !important;
+}
+
+.red-fab.mat-mdc-mini-fab {
+  background-color: #ffaaaa !important;
+  color: #ad0606 !important;
+}
+
+.teal-fab.mat-mdc-mini-fab {
+  background-color: #aaf2ff !important;
+  color: #067bad !important;
 }

@@ -7,30 +7,42 @@
     </h4>
     <p>Choose any to continue.</p>
 
-    <mat-grid-list cols="2" rowHeight="3:1">
-        <mat-grid-tile class="blue-background">
+    <div class="my-grid">
+        <div class="box blue-background">
             <button matFab extended routerLink="/pomodoro">
                 <mat-icon>timer</mat-icon>
                 <span>Pomodoro Timer</span>
             </button>
-        </mat-grid-tile>
-        <mat-grid-tile class="green-background">
-                <button matFab extended class="green-fab" disabled>
+        </div>
+        <div class="box red-background">
+            <button matFab extended class="red-fab" disabled>
+                <mat-icon>code</mat-icon>
+                UUID Generator
+            </button>
+        </div>
+        <div class="box green-background">
+            <button matFab extended class="green-fab" disabled>
                 <mat-icon>access_time</mat-icon>
                 World Clock
             </button>
-        </mat-grid-tile>
-        <mat-grid-tile class="purple-background">
-                <button matFab extended class="purple-fab" disabled>
+        </div>
+        <div class="box purple-background">
+            <button matFab extended class="purple-fab" disabled>
                 <mat-icon>assignment_turned_in</mat-icon>
                 Task Tracker (wih motivation)
             </button>
-        </mat-grid-tile>
-        <mat-grid-tile class="orange-background">
-                <button matFab extended class="orange-fab" disabled>
+        </div>
+        <div class="box orange-background">
+            <button matFab extended class="orange-fab" disabled>
                 <mat-icon>class</mat-icon>
                 Sratchpad
             </button>
-        </mat-grid-tile>
-    </mat-grid-list>
+        </div>
+        <div class="box teal-background">
+            <button matFab extended class="teal-fab" disabled>
+                <mat-icon>error</mat-icon>
+                TBD
+            </button>
+        </div>
+    </div>
 </div>

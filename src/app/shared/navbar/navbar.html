@@ -38,6 +38,14 @@
         </button>
         <button 
           matMiniFab
+          class="red-fab"
+          matTooltip="UUID Generator"
+          disabled
+        >
+            <mat-icon>code</mat-icon>
+        </button>
+        <button 
+          matMiniFab
           class="green-fab"
           matTooltip="World Clock"
           disabled
@@ -72,11 +80,15 @@
       color="primary"
       class="bottom-toolbar"
     > 
-      <div matTooltip="My nickname? Classified. Buy me coffee first.">
-        <p class="m-0" style="font-size: 16px">
-          Syamirul "Top" Rossman - {{date | date:'YYYY'}}
-        </p>
-      </div>
+      <!-- <div matTooltip="My nickname? Classified. Buy me coffee first.">
+        <div class="m-0" style="font-size: 16px">
+          Syamirul "Top" Rossman
+        </div>
+        <div class="m-0" style="font-size: 10px">
+          {{date | date:'YYYY'}}
+        </div>
+      </div> -->
+      <span class="spacer"></span>
       <div class="d-flex gap-2 content-toolbar-right">
         <button 
           matMiniFab 
