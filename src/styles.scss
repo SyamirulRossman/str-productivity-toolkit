@@ -83,6 +83,13 @@ body {
     ));
   }
 
+  .red-fab {
+    @include mat.fab-overrides((
+      container-color: #ffaaaa,
+      foreground-color: #ad0606,
+    ));
+  }
+
   .grey-fab {
     @include mat.fab-overrides((
       container-color: #c8c8c8,

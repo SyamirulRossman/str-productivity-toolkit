@@ -1,4 +1,4 @@
-<div class="container d-flex flex-column mt-3 justify-content-center">
+<div class="container d-flex flex-column mt-2 justify-content-center">
     <h1><b>Kasi Setel!</b></h1>
     <h4><b>Today is:</b> {{date | date:'EEEE, dd MMMM yyyy'}}</h4>
     <h4>
@@ -15,13 +15,13 @@
             </button>
         </div>
         <div class="box red-background">
-            <button matFab extended class="red-fab" disabled>
+            <button matFab extended class="red-fab" routerLink="/uuid-generator">
                 <mat-icon>code</mat-icon>
                 UUID Generator
             </button>
         </div>
         <div class="box green-background">
-            <button matFab extended class="green-fab" disabled>
+            <button matFab extended class="green-fab" routerLink="/world-clock">
                 <mat-icon>access_time</mat-icon>
                 World Clock
             </button>

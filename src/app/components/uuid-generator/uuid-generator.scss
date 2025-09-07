@@ -1,0 +1,36 @@
+.uuid-card {
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    background: #fafafa;
+    max-width: 400px;
+    margin: 2rem auto;
+    text-align: center;
+}
+.uuid-output {
+    background: #111;
+    color: #0f0;
+    padding: 1rem;
+    border-radius: 8px;
+    font-family: monospace;
+    min-height: 40px;
+    margin: 1rem 0;
+}
+.btn-row {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+button {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: #7c3aed;
+    color: white;
+    font-weight: 600;
+}
+button[disabled] {
+    background: #aaa;
+    cursor: not-allowed;
+}

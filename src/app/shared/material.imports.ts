@@ -13,7 +13,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { AsyncPipe, DatePipe, DecimalPipe } from '@angular/common';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common'; 
 
 
@@ -36,6 +36,7 @@ export const MATERIAL_IMPORTS = [
 
   RouterModule,
   ReactiveFormsModule,
+  FormsModule,
 
   DatePipe,
   AsyncPipe,

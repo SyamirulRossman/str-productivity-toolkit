@@ -1,0 +1,10 @@
+<div class="uuid-card">
+    <h2>🔢 UUID Generator</h2>
+      
+    <pre class="uuid-output">{{ uuid || '— press Generate —' }}</pre>
+      
+    <div class="btn-row">
+        <button (click)="generate()">Generate</button>
+        <button (click)="copy()" [disabled]="!uuid">Copy</button>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="clock-container">
+    <h2>🕒 World Clock</h2>
+
+    @if (time$ | async; as time) {
+        <p class="time">{{ getFormattedTime(time) }}</p>
+    }
+
+    <p class="zone">Timezone: {{ selectedZone }}</p>
+
+    <label for="zone">Change Timezone:</label>
+    <select id="zone" [(ngModel)]="selectedZone">
+        @for (zone of timeZones; track zone) {
+        <option [value]="zone">{{ zone }}</option>
+        }
+    </select>
+</div>
