@@ -20,6 +20,17 @@
                     </div>
                 </div>
 
+                <form class="row justify-content-center mt-3 mx-5">
+                    <mat-form-field>
+                        <mat-label>UUID Version</mat-label>
+                        <mat-select [(ngModel)]="selectedValue" name="versions">
+                        @for (version of versions; track versions) {
+                            <mat-option [value]="version.value">{{version.viewValue}}</mat-option>
+                        }
+                        </mat-select>
+                    </mat-form-field>
+                </form>
+
                 <div class="row justify-content-center">
                     <div class="col-auto">
                         <button matButton="filled" class="purple-button" (click)="generate()">Generate</button>
@@ -28,7 +39,72 @@
                     <button matButton="filled" class="green-button" (click)="copy()" [disabled]="!uuid">Copy</button>
                     </div>
                 </div>
+                
             </div>
         </mat-card-content>
     </mat-card>
+    <div class="py-3">
+        <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+                <mat-expansion-panel-header>
+                <mat-panel-title>Generate Multiple UUID</mat-panel-title>
+                </mat-expansion-panel-header>
+                <form [formGroup]="mutilpleUuidForm" (ngSubmit)="generateMultiple()">
+
+                    <div class="row justify-content-center">
+                        <mat-form-field class="col-auto">
+                            <mat-label>UUID Version</mat-label>
+                            <mat-select name="versions" formControlName="version">
+                            @for (version of versions; track versions) {
+                                <mat-option [value]="version.value">{{version.viewValue}}</mat-option>
+                            }
+                            </mat-select>
+                        </mat-form-field>
+
+                        <mat-form-field class="col-auto">
+                            <mat-label>Number</mat-label>
+                            <input matInput type="number" min="1" formControlName="count">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-auto">
+                            <button matButton="filled" class="purple-button" type="submit">Generate</button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- @for (id of mutilpleUuidArrays; track $index) {
+                    {{id}}
+                } -->
+
+                <table mat-table [dataSource]="mutilpleUuidArrays" class="mat-elevation-z8">
+                    <ng-container matColumnDef="no">
+                        <th mat-header-cell *matHeaderCellDef>No</th>
+                        <td mat-cell *matCellDef="let element; let i = index">{{ i + 1 }}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef> {{mutilpleUuidForm.value.version}} </th>
+                        <td mat-cell *matCellDef="let element"> 
+                            {{element.id}}
+                            @if (element.copied) {
+                                <button matButton="outlined" disabled="true" (click)="copyOne(element.id)">Copied!</button>
+                            }
+                        </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="action" stickyEnd>
+                        <th mat-header-cell *matHeaderCellDef> </th>
+                        <td mat-cell *matCellDef="let element">
+                            <button matButton="filled" class="green-button" (click)="copyOne(element)"> Copy</button>
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>    
 </div>
