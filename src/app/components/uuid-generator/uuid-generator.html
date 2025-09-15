@@ -1,10 +1,34 @@
-<div class="uuid-card">
-    <h2>🔢 UUID Generator</h2>
-      
-    <pre class="uuid-output">{{ uuid || '— press Generate —' }}</pre>
-      
-    <div class="btn-row">
-        <button (click)="generate()">Generate</button>
-        <button (click)="copy()" [disabled]="!uuid">Copy</button>
+<div class="container d-flex flex-column">
+    <div class="header-container">
+        <h1>UUID Generator</h1>
+
+        <button mat-mini-fab
+            (click)="openRouteInNewTab('https://en.wikipedia.org/wiki/Universally_unique_identifier')"
+            class="grey-fab"
+            matTooltip="What is UUID"
+        >
+            <mat-icon>info</mat-icon>
+        </button>
     </div>
+
+    <mat-card>
+        <mat-card-content class="d-flex justify-content-center m-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <pre class="uuid-output">{{ uuid || '— press Generate —' }}</pre>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-auto">
+                        <button matButton="filled" class="purple-button" (click)="generate()">Generate</button>
+                    </div>
+                    <div class="col-auto">
+                    <button matButton="filled" class="green-button" (click)="copy()" [disabled]="!uuid">Copy</button>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
 </div>

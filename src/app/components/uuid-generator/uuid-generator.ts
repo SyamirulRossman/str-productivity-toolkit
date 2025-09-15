@@ -32,5 +32,9 @@ export class UuidGenerator {
     if (!this.uuid) return;
     await navigator.clipboard.writeText(this.uuid);
     alert('Copied: ' + this.uuid);
-  }
+  };
+
+  openRouteInNewTab(url: string) {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
 }
