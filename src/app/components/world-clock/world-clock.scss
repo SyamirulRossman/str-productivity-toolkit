@@ -1,19 +1,10 @@
-.clock-container {
-  text-align: center;
-  margin: 1rem auto;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  width: fit-content;
-}
-
-.time {
-  font-size: 2rem;
-  font-weight: bold;
-  margin: 0.5rem 0;
-}
-
-.zone {
-  color: #555;
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin-bottom: 1rem;
+}
+
+.header-container h1 {
+  margin: 0;
 }

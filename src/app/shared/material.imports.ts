@@ -17,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 
 
 export const MATERIAL_IMPORTS = [
@@ -45,4 +46,6 @@ export const MATERIAL_IMPORTS = [
   DatePipe,
   AsyncPipe,
   DecimalPipe,
+
+  NgxMatSelectSearchModule,
 ];

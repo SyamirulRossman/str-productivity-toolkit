@@ -1,4 +1,4 @@
-<div class="clock-container">
+<!-- <div class="clock-container">
     <h2>🕒 World Clock</h2>
 
     @if (time$ | async; as time) {
@@ -13,4 +13,59 @@
         <option [value]="zone">{{ zone }}</option>
         }
     </select>
+</div> -->
+
+<div class="container d-flex flex-column">
+    <div class="header-container">
+        <h1>World Clock</h1>
+
+        <button mat-mini-fab
+            (click)="openRouteInNewTab('https://en.wikipedia.org/wiki/Universally_unique_identifier')"
+            class="grey-fab"
+            matTooltip="What is UUID"
+        >
+            <mat-icon>info</mat-icon>
+        </button>
+    </div>
+
+    <mat-card>
+        <mat-card-content class="d-flex justify-content-center m-3">
+            <div class="container">
+                <div class="row my-3">
+                    <div class="col text-center">
+                        @if (time$ | async; as time) {
+                            <h1 style="font-weight: bold;">{{ getFormattedTime(time) }}</h1>
+                        }
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <p>Timezone: {{ selectedZone }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <mat-form-field>
+                            <mat-select id="zone" [(ngModel)]="selectedZone">
+
+                                <!-- search box -->
+                                <mat-option>
+                                <ngx-mat-select-search 
+                                    [formControl]="zoneFilterCtrl"
+                                    placeholderLabel="Search zone..."
+                                    noEntriesFoundLabel="No match found">
+                                </ngx-mat-select-search>
+                                </mat-option>
+
+                                <!-- options -->
+                                @for (zone of filteredZones; track zone) {
+                                <mat-option [value]="zone">{{ zone }}</mat-option>
+                                }
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
 </div>
